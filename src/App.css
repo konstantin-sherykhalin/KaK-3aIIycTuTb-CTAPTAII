@@ -30,3 +30,32 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.first-q input[type="radio"] {
+  display: none;
+}
+.first-q label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.first-q input[type="radio"] + label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #5A5A5A;
+  transition: all 0.5s;
+  vertical-align: middle;
+  position: relative;
+  margin-top: -3px;
+}
+.first-q input[type="radio"]:checked + label::before {
+  background-color: var(--button-green);
+  border: 2px solid #5A5A5A;
+}
