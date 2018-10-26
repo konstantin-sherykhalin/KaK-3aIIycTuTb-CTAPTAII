@@ -9,10 +9,10 @@ export default class App extends Component {
 	};
 
 	next = () => {
-		if(this.state.me.length && this.state.idea.length) this.setState({redirect:'/four'});
+		this.setState({redirect:'/four'});
 	}
 
 	render() {
-		return this.state.redirect ? <Redirect to={this.state.redirect} /> : <Layout/>;
+		return this.state.redirect ? <Redirect to={this.state.redirect} /> : <Layout next={this.next} />;
 	}
 }
