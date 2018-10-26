@@ -19,6 +19,17 @@ export default class App extends Component {
 	}
 
 	render() {
-		return this.state.redirect ? <Redirect to={this.state.redirect} /> : <Layout/>;
+		return (
+			this.state.redirect ? (
+				<Redirect to={this.state.redirect} />
+			) : (
+				<Layout
+					state={this.state}
+					set_me={this.set_me}
+					set_idea={this.set_idea}
+					next={this.next}
+				/>
+			)
+		);
 	}
 }

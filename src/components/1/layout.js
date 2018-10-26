@@ -1,25 +1,42 @@
-import React, { Component } from 'react';
+import React,{Component} from 'react';
 
+const me = [
+	'Автор идеи',
+	'Инвестор',
+];
+const idea = [
+	'IT-стартап',
+	'Салон красоты',
+	'Пекарня',
+	'Интернет-магазин',
+	'Рекламное агенство',
+];
 
-export default () => (
-      <div className="container">
-      	  <h1>Начни составлять свой бизнес-план сейчас</h1>
-          <div className="first-q">
-              <h2>Кто ты. Я -</h2>
-              <input id="one" type="radio" checked />
-              <label for="one">Автор идеи</label>
-              <input id="two" type="radio" />
-              <label for="two">Инвестор</label>
-          </div>
-          <div className="second-q">
-              <h2>С чем связана твоя идея?</h2>
-              <select>
-                <option>IT-стартап</option>
-                <option>Салон красоты</option>
-                <option>Пекарня</option>
-                <option>Интернет-магазин</option>
-                <option>Рекламное агенство</option>
-              </select>
-          </div>
-      </div>
-    );
+export default class Layout extends Component {
+	state = {
+		me: -1,
+		idea: -1,
+	};
+
+	set_me	 = (value) => this.props.set_me(me[value]);
+	set_idea = (value) => this.props.set_idea(idea[value]);
+
+	render() {
+		return (
+			<div className="container">
+				<h1>Начни составлять свой бизнес-план сейчас</h1>
+				<div className="first-q">
+					<h2>Кто ты. Я -</h2>
+					{me.map((e,i) => (<label key={i} onClick={_ => this.set_me(i)}>{e}</label>))}
+				</div>
+				<div className="second-q">
+					<h2>С чем связана твоя идея?</h2>
+					<select defaultValue={0} onChange={({target}) => this.set_idea(target.value)}>
+						{idea.map((e,i) => (<option key={i} value={i}>{e}</option>))}
+					</select>
+				</div>
+				<input type="button" value="Дальше" onClick={this.props.next} />
+			</div>
+		);
+	}
+}
