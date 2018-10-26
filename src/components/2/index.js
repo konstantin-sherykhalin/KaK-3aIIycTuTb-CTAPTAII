@@ -13,10 +13,21 @@ export default class App extends Component {
 	set_idea = (idea) => this.setState({idea});
 
 	next = () => {
+		console.log(this.state);
 		if(this.state.idea.length) this.setState({redirect:'/three'});
 	}
 
 	render() {
-		return this.state.redirect ? <Redirect to={this.state.redirect} /> : <Layout/>;
+		return (
+			this.state.redirect ? (
+				<Redirect to={this.state.redirect} />
+			) : (
+				<Layout
+					state={this.state}
+					set_idea={this.set_idea}
+					next={this.next}
+				/>
+			)
+		);
 	}
 }
