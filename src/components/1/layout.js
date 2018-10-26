@@ -6,7 +6,7 @@ export default () => (
       	  <h1>Начни составлять свой бизнес-план сейчас</h1>
           <div className="first-q">
               <h2>Кто ты. Я -</h2>
-              <input id="one" type="radio" checked />
+              <input id="one" type="radio" checked="true" />
               <label for="one">Автор идеи</label>
               <input id="two" type="radio" />
               <label for="two">Инвестор</label>
