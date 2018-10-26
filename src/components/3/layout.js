@@ -2,14 +2,10 @@ import React from 'react';
 
 export default (props) =>  (
 	<div className="container">
-          <div className="first-q">
-              <h2>Одно правило, </h2>
-              <h3>Какая у тебя идея?</h3>
-              <p>
-			  	loreAdipisicing cupidatat ut officia aute proident mollit sunt consequat eiusmod
-				excepteur ut sit velit aute consectetur ex aliquiproident amet duis fugiat et quis
-				amet sint dolore amet exercitation veniam dolore veniam anim duis.
-			  </p>
+          <div className="block-qq">
+              <h2>Одно правило, которое поможет тебе реализовать идею </h2>
+              <h3>У нас есть одно правило, которого ты должен придерживаться всегда</h3>
+              <p>'Делай каждый новый шаг не позже, чем через 48 часов'</p>
               <input type="submit" className="button" value="Готово" onClick={props.next} />
           </div>
     </div>

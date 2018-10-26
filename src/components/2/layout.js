@@ -2,7 +2,7 @@ import React from 'react';
 
 export default (props) =>  (
 	<div className="container">
-		<div className="first-q">
+		<div className="block-q">
 			<h2>Давай познакомимся</h2>
 			<p>
 				loreAdipisicing cupidatat ut officia aute proident mollit sunt consequat eiusmod
