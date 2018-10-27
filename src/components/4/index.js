@@ -54,6 +54,11 @@ export default class App extends Component {
 		step[this.state.active].canvas = true;
 		this.setState({step});
 	}
+	set_canvas = (data) => {
+		let step = this.state.step;
+		step[this.state.active].canvas = data;
+		this.setState({step});
+	}
 
 	next_step = () => {
 		if(this.state.step[this.state.active].answer === this.state.step[this.state.active].true_answer) {
@@ -67,6 +72,8 @@ export default class App extends Component {
 				state={this.state}
 				start_test={this.start_test}
 				set_answer={this.set_answer}
+				start_canvas={this.start_canvas}
+				set_canvas={this.set_canvas}
 				next_step={this.next_step}
 			/>
 		);
