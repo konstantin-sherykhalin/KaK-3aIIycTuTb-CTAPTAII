@@ -7,9 +7,10 @@ export default class App extends Component {
 		step: [
 			{
 				name: 'Проблема и решение',
-				question: 'Вопрос',
-				answers: [1,2,3],
-				true_answer: 0,
+				question: 'Вы решили запустить сервис онлайн бухгалтерии. Укажите, что относится к преимуществам',
+				answers: ['Электронный документооборот','Дешево','Удаленный доступ','Автоматизация учета'],
+				answer: -1,
+				true_answer: 2,
 			},
 			{
 				name: 'Рынок и конкуренты',
@@ -21,6 +22,18 @@ export default class App extends Component {
 		active: 0,
 		available: 0,
 	};
+
+	set_answer = (answer) => {
+		let step = this.state.step;
+		step[this.state.active].answer = answer;
+		this.setState({step});
+	}
+
+	next_step = () => {
+		if(this.state.step[this.state.active].answer === this.state.step[this.state.active].true_answer) {
+			this.setState(prev => ({active:prev.active+1,available:prev.available+1}));
+		}
+	}
 
 	render() {
 		return (<Layout state={this.state} />);
