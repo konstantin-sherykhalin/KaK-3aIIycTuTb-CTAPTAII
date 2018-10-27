@@ -27,11 +27,12 @@ export default class Layout extends Component {
 				<h1>Начни составлять свой бизнес-план сейчас</h1>
 				<div className="block-q">
 					<h2>Кто ты. Я -</h2>
-					{me.map((e,i) => (<label key={i} onClick={_ => this.set_me(i)}>{e}</label>))}
+					{me.map((e,i) => (<label key={i} onClick={_ => this.set_me(i)}><input type="radio" /> {e}</label>))}
 				</div>
 				<div className="block-q">
 					<h2>С чем связана твоя идея?</h2>
-					<select defaultValue={0} onChange={({target}) => this.set_idea(target.value)}>
+					<select defaultValue={this.state.idea} onChange={({target}) => this.set_idea(target.value)}>
+						<option value={-1} disabled>Выберите ваше сферу деятельности</option>
 						{idea.map((e,i) => (<option key={i} value={i}>{e}</option>))}
 					</select>
 				</div>
