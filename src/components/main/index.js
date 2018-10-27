@@ -5,7 +5,7 @@ import Layout from './layout';
 
 export default class App extends Component {
 	state = {
-		redirect: false,
+		redirect: '/one',
 	};
 
 	next = () => {
