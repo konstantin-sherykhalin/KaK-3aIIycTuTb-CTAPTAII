@@ -25,9 +25,9 @@ export default (props) => {
 						</div>
 					) : (
 						(data.answer === -1 || data.answer !== data.true_answer) ? (
-							<div>
-								<h2>{data.question}</h2>
-								{data.answers.map((e,i) => (<p key={i} onClick={_ => props.set_answer(i)}>{e}</p>))}
+							<div className="button-container">
+							<h2>{data.question}</h2>
+								{data.answers.map((e,i) => (<button className="button-click"key={i} onClick={_ => props.set_answer(i)}>{e}</button>))}
 								{(data.answer !== -1 && data.answer !== data.true_answer) && (<p>Неправильный ответ!</p>)}
 							</div>
 						) : (

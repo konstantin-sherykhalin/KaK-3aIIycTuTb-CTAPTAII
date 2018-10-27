@@ -47,7 +47,7 @@ h1, h2, h3{
 .button{
   padding: 12px 10px;
   margin-top: 30px;
-  width: 100px;
+  width: 210px;
   background: #0082CD;
   color: white;
   border: 0;
@@ -150,16 +150,57 @@ h1, h2, h3{
   padding: 30px 10px;
   width: 150px;
   height: 50px;
-  border: 1px solid #AA6F6E;
-  background: #FDCBCA;
+  border: 1px solid #4EB83E;
+  background: #BCF6B3;
   text-align: center;
 }
 .var-container{
   margin: 20px auto;
   width: 1000px;
 }
-.var-container input{
-  width: 200px;
+
+.button-container{
+  counter-reset: list;
+  display: flex;
+  flex-direction: column;
 }
+.button-click{
+  text-align: left;
+  width: 250px;
+  padding: 12px;
+  border: none;
+  border-radius: 3px;
+  transition: .5s all;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.button-click::before{
+    counter-increment: list;
+    content: counter(list) ". ";
+}
+.button-click:hover{
+  background: #8BD1F2;
+}
+.textarea-container{
+  display: flex;
+}
+.textArea{
+  padding: 5px;
+  margin: 0;
+}
+.textArea textarea{
+  width: 100%;
+}
+.textArea h2{
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.flex-parent{
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 
