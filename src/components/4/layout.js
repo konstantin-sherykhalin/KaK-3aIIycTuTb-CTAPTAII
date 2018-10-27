@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default () =>  (
-	<div className="first-q">Страница 4</div>
+export default (props) =>  (
+	<div style={{display:'flex',flexDirection:'row'}}>
+		<div style={{width:'25%'}}>{props.state.step.map((e,i) => <div key={i}>{e.name}</div>)}</div>
+	</div>
 );

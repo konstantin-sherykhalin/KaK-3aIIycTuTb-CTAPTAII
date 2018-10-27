@@ -18,8 +18,15 @@ export default class Layout extends Component {
 		idea: -1,
 	};
 
-	set_me	 = (value) => this.props.set_me(me[value]);
-	set_idea = (value) => this.props.set_idea(idea[value]);
+	set_me	 = (value) => {
+		this.setState({me:value});
+		this.props.set_me(me[value]);
+		console.log(this.state);
+	};
+	set_idea = (value) => {
+		this.setState({idea:value});
+		this.props.set_idea(idea[value]);
+	}
 
 	render() {
 		return (
@@ -27,7 +34,9 @@ export default class Layout extends Component {
 				<h1>Начни составлять свой бизнес-план сейчас</h1>
 				<div className="block-q">
 					<h2>Кто ты. Я -</h2>
-					{me.map((e,i) => (<label key={i} onClick={_ => this.set_me(i)}><input type="radio" /> {e}</label>))}
+					{me.map((e,i) => (
+						<label key={i} className={this.state.me==i ? 'checked' : 'unchecked'} onClick={_ => this.set_me(i)}>{e}</label>
+					))}
 				</div>
 				<div className="block-q">
 					<h2>С чем связана твоя идея?</h2>
