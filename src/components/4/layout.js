@@ -9,7 +9,7 @@ export default (props) => {
 			<div className="left-container">
 				<ul>
 				{props.state.step.map((e,i) => (
-					<li key={i}>{e.name} ></li>
+					<li className={i==props.state.active ? 'list-checked': ''}key={i}>{e.name} ></li>
 				))}
 				</ul>
 			</div>
