@@ -7,20 +7,28 @@ export default class App extends Component {
 		step: [
 			{
 				name: 'Проблема и решение',
+<<<<<<< HEAD
 				question: 'Вы решили запустить сервис онлайн бухгалтерии. Укажите, что относится к преимуществам',
 				answers: ['Электронный документооборот','Дешево','Удаленный доступ','Автоматизация учета'],
 				answer: -1,
 				true_answer: 2,
+=======
+				question: '',
+				active: true,
+				available: true,
+>>>>>>> 044b4344046ce04886fc4a1d9bb0e4f08968d9bb
 			},
 			{
 				name: 'Рынок и конкуренты',
+				active: false,
+				available: false,
 			},
 			{
 				name: 'Проверка гипотезы',
+				active: false,
+				available: false,
 			},
 		],
-		active: 0,
-		available: 0,
 	};
 
 	set_answer = (answer) => {

@@ -107,10 +107,59 @@ h1, h2, h3{
   background: white;
 }
 
-.li-container ul{
+
+
+.var-container *{
+  font-weight: bold;
+}
+.var-container p{
+  font-weight: normal;
+  text-align: justify;
+}
+.left-container ul{
   list-style: none;
+  counter-reset: list;
+  margin: 0;
+  padding: 0;
 }
-.li-container li{
-    border: 1px solid grey;
-    padding: 5px 10px;
+.left-container li{
+    border: 2px solid black;
+    width: 250px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background: #F5F5F5;
+    text-align: center;
 }
+.left-container li:hover,
+.left-container li.checked{
+    background: white;
+    cursor: pointer;
+}
+
+.left-container li:before {
+    counter-increment: list;
+    content: counter(list) ". ";
+}
+
+.middle-container{
+  padding: 0 40px;
+  width: 500px;
+}
+
+.right-container{
+  padding: 30px 10px;
+  width: 150px;
+  height: 50px;
+  border: 1px solid #AA6F6E;
+  background: #FDCBCA;
+  text-align: center;
+}
+.var-container{
+  margin: 20px auto;
+  width: 1000px;
+}
+.var-container input{
+  width: 200px;
+}
+
+
