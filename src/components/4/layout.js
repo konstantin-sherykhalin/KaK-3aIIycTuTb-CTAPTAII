@@ -1,16 +1,18 @@
 import React from 'react';
 
 export default (props) =>  (
-	<div style={{display:'flex',flexDirection:'row'}}>
-		<div className="li-container">
+	<div className="var-container" style={{display:'flex',flexDirection:'row'}}>
+		<div className="left-container">
 			<ul>
 				<li>Проверка идеи ></li>
 				<li>Построение гипотезы ></li>
 				<li>Проверка гипотезы ></li>
-				<li>Составление roadmap ></li>
+				<li>Показатели успеха ></li>
+				<li>Юнит-экономика</li>
+				<li>Роадмап</li>
 			</ul>
 		</div>
-		<div>
+		<div className="middle-container">
 			<h1>Проверка идеи</h1>
 			<h2>Что такое бизнес-канвас?</h2>
 			<p>Dolore commodo excepteur dolore dolor sit exercitation non officia
@@ -23,10 +25,12 @@ export default (props) =>  (
 			   mpor sed tempor exercitation consectetur ut ut adipisicing
 			    id commodo ullamco anim nisi exercitation ut ex cillum vol
 			</p>
+			<div>Лекция о бизнес-канвас</div>
+			<input type="submit" className="button" value="Я готов пройти тест" />
 		</div>
-		<div>
-			<span>Стоимость идеи</span>
-			<span>1$</span>
+		<div className="right-container">
+			<div>Стоимость идеи:</div>
+			<div>1$</div>
 		</div>
 	</div>
 );

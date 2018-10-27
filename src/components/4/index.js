@@ -7,19 +7,21 @@ export default class App extends Component {
 		step: [
 			{
 				name: 'Проблема и решение',
-				question: 'Вопрос',
-				answers: [1,2,3],
-				true_answer: 0,
+				question: '',
+				active: true,
+				available: true,
 			},
 			{
 				name: 'Рынок и конкуренты',
+				active: false,
+				available: false,
 			},
 			{
 				name: 'Проверка гипотезы',
+				active: false,
+				available: false,
 			},
 		],
-		active: 0,
-		available: 0,
 	};
 
 	render() {
